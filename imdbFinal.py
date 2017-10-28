@@ -56,7 +56,7 @@ def get_info(id):
     else:
         genre.append(data['genre'])
         plot.append(data['plot'])
-        ratings.append(d['rating'])
+        ratings.append(data['rating'])
 
 def main():
     filepath = raw_input("Enter path")
