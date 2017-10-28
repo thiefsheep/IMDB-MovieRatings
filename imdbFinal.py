@@ -46,7 +46,7 @@ def get_imdb_id(input):
 def get_info(id):
 
     data = json.loads(urlopen(Request("http://theapache64.xyz:8080/movie_db/search?keyword={0}".format(id))).read())
-
+    
     if data.error_code == 1:
         message = "No results found"
         genre.append(message)
@@ -54,9 +54,9 @@ def get_info(id):
         ratings.append(message)
 
     else:
-        genre.append(data['genre'])
-        plot.append(data['plot'])
-        ratings.append(data['rating'])
+        genre.append(data.data.genre)
+        plot.append(data.data.plot)
+        ratings.append(data.data.rating)
 
 def main():
     filepath = raw_input("Enter path")
