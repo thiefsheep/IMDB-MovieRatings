@@ -47,7 +47,7 @@ def get_info(id):
 
     data = json.loads(urlopen(Request("http://theapache64.xyz:8080/movie_db/search?keyword={0}".format(id))).read())
     
-    if data.error_code == 1:
+    if data['error_code'] == 1:
         message = "No results found"
         genre.append(message)
         plot.append(message)
